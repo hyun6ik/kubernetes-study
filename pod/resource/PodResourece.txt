@@ -1,0 +1,15 @@
+Pod Resource 요청 및 제한
+- Resource Requests :
+  - Pod를 실행하기 위한 최소 리소스 양을 요청한다.
+- Resource Limits:
+  - Pod가 사용할 수 있는 최대 리소스 양을 제한한다.
+  - Memory Limit을 초과해서 사용되는 Pod는 종료(OOM Kill)되며 다시 스케줄링 된다.
+
+if Request만 주고 Limit은 안줬다면?
+--> Request만 할당된다.
+
+if Limit만 주고 Request는 안줬다면?
+--> Request는 Limit와 동일한 사이즈로 할당된다.
+
+if Request에 할당된 사이즈에 만족하는 노드가 없다면?
+--> Pending 상태로 대기하게 되다가 할당된 사이즈가 나오면 그때서야 실행된다.
