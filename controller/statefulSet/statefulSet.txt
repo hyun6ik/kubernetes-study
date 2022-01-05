@@ -1,0 +1,4 @@
+StatefulSet
+  - Pod의 상태를 유지해주는 컨트롤러
+    - Pod의 이름
+    - Pod의 볼륨(스토리지)
