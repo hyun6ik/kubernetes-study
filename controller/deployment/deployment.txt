@@ -1,0 +1,14 @@
+Deployment
+  - ReplicaSet을 컨트롤해서 Pod수를 조절한다.
+  - Rolling Update & Rolling Back
+
+  Rolling Update
+    - Pod를 점진적으로 새로운 것으로 업데이트하여 Deployment 업데이트가
+      서비스 중단 없이 이루어질 수 있도록 해준다.
+      ex) nginx:1.14 -> nginx:1.15 but 서비스 중단 X
+
+      kubectl set image deployment <deploy_name> <container_name> = <new_version_image>
+
+  Rolling Back
+      kubectl rollout history deployment <deploy_name>
+      kubectl rollout undo deploy <deploy_name>
