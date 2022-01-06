@@ -1,0 +1,4 @@
+NodePort
+  - 모든 노드를 대상으로 외부 접속 가능한 포트를 예약한다.
+  - Default NodePort 범위 : 30000-32767
+  - ClusterIP를 생성 후 NodePort를 예약한다.
