@@ -1,0 +1,4 @@
+LoadBalancer
+  - Public 클라우드(AWS, Azure, GCP 등)에서 운영 가능하다.
+  - LoadBalancer를 자동으로 구성 요청한다.
+  - NodePort를 예약 후 해당 NodePort로 외부 접근을 허용한다.
