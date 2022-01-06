@@ -1,0 +1,2 @@
+ExternalName
+  - 클러스터 내부에서 External(외부)의 도메인을 설정한다.
