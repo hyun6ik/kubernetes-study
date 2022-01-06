@@ -1,0 +1,15 @@
+Kubernetes Service
+  - 동일한 서비스를 제공하는 Pod 그룹의 단일 진입점을 제공한다.
+
+  Service Type
+  - ClusterIp(default)
+     - Pod 그룹의 단일 진입점(Virtual IP)을 생성한다.
+  - NodePort
+     - ClusterIP가 생성된 후
+     - 모든 Worker Node에 외부에서 접속가능한 포트가 예약된다.
+  - LoadBalancer
+     - 클라우드 인프라스트럭처(AWS,Azure...)나 오픈스택 클라우드에서 적용할 수 있다.
+     - LoadBalancer를 자동으로 provision 하는 기능을 지원한다.
+   - ExternalName
+     - 클러스터 안에서 외부에 접속 시 사용할 도메인을 등록해서 사용할 수 있다.
+     - 클러스터 도메인이 실제 외부 도메인으로 치환되어 동작한다.
