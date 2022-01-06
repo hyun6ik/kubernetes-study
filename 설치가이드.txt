@@ -64,3 +64,16 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 systemctl daemon-reload
 systemctl restart kubelet
+
+3. Control-plane
+
+kubeadm init
+
+(root가 아닌 사용자에서 kubectl 가능하게 하기)
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+export KUBECONFIG=/etc/kubernetes/admin.conf
+
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
