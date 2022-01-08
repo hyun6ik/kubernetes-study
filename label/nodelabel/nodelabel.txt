@@ -1,0 +1,4 @@
+NodeLabel
+  - Worker Node의 특성을 Label로 설정한다.
+    # kubectl label nodes 노드이름 key=value
+  - Node를 선택해서 Pod를 배치할 수 있다.
