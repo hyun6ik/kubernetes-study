@@ -1,0 +1,31 @@
+Label
+  - Node를 포함하여 Pod, Deployment 등 모든 리소스에 할당할 수 있다.
+  - 리소스의 특성을 분륳하고, Selector를 이용해서 선택한다.
+  - Key-Value 한쌍으로 적용된다.
+    -  ex) name=mainui  name=product  name=order  name=account  name=shoppingcart
+           rel=stable   rel=stable    rel=stable  rel=stable    rel=stable
+           rel=beta     rel=beta,     rel=beta                  rel=beta
+           rel=canary   rel=canary    rel=canary  rel=canary
+
+Label과 Selector
+
+  - Label
+     metadata:
+       labes:
+         rel: stable
+         name: mainui
+
+  - Selector
+     selector:
+       matchLabels:
+         key: value
+       matchExpressions:
+         - {key: name, operator: In, values: [mainui]}
+         - {key: rel, operator: NotIn, values: ["beta","canary"]}
+
+kubectl get pods --show-labels
+kubectl get pods -l name=mainui
+kubectl get pods --selector name=mainui\
+kubectl label pod pod-demo name=test
+kubectl label pod pod-demo name=login --overwrite
+kubectl label pod pod-demo name-
