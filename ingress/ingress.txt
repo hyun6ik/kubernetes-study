@@ -6,7 +6,7 @@ Kubernetes Ingress
     - SSL 인증서를 처리한다.
     - Virtual hosting을 지정한다.
 
-    설치 : kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.0/deploy/static/provider/baremetal/deploy.yaml
+    설치 : wget -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.0/deploy/static/provider/baremetal/deploy.yaml
 
 Default namespace 치환 : kubectl config
   kubectl config --help
