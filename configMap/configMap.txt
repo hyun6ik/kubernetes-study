@@ -1,0 +1,12 @@
+ConfigMap
+  - 컨테이너 구성 정보를 한곳에 모아서 관리할 수 있다.
+
+  ConfigMap 생성
+  # kubectl create configmap NAME [--from-file=source] [--from-literal=key1=value1]
+
+  # kubectl create configmap CONFIG_NAME --from-literal=id=b20220110 --from literal=class=bigdata
+  # kubectl create configmap CONFIG_NAME --from-file=text.file
+  # kubectl create configmap CONFIG_NAME --from-file=mydata=text.file
+  # kubectl create configmap CONFIG_NAME --from-file=/configmap.dir/
+
+  #kubectl create configmap hyun6ik-config --from-literal=INTERVAL=2 --from-literal=OPTION=boy --from-file=config.dir/
