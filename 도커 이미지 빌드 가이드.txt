@@ -1,0 +1,15 @@
+1. Dockerfile 생성
+
+FROM node:slim
+EXPOSE 8000
+COPY hello.js .
+CMD node hello.js
+
+2. 이미지 빌드
+docker build -t hyun6ik/hello
+
+3. 도커 실행
+docker run -d -p 8100:8000 hyun6ik/hello
+
+4. 도커 푸쉬
+docker push hyun6ik/hello
