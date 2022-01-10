@@ -1,0 +1,9 @@
+Canary Deployment
+  - Pod를 배포(업데이트)하는 방법
+    - Blue, Green 업데이트
+    - Canary Update
+    - Rolling Update
+  - Canary 배포
+    - 기존 버전을 유지한 채로 일부 버전만 신규 버전으로 올려서
+      신규 버전에 버그나 이상은 없는지 확인하는 방법
+
