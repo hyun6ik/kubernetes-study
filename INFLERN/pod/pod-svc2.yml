@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-for-production
+spec:
+  selector:
+    rel: production
+  ports:
+    - port: 8000
