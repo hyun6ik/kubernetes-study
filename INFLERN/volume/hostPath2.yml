@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-volume-3
+spec:
+  nodeSelector:
+    kubernetes.io/hostname:
+
+  containers:
+    - name: container1
+      image: hyun6ik/hello
+      volumeMounts:
+        - name: host-path
+          mountPath: /mount1
+  volumes:
+    - name: host-path
+      hostPath:
+        path: /node-v
+        type: DirectoryOrCreate
