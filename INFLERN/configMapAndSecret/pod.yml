@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+spec:
+  containers:
+    - name: container
+      image: hyun6ik/hello
+      envFrom:
+        - configMapRef:
+            name: configmap-dev
+        - secretRef:
+            name: secret-dev
