@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-dev
+data:
+  SSH: 'false'
+  User: dev
