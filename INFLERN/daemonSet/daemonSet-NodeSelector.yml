@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemonset-2
+spec:
+  selector:
+    matchLabels:
+      type: app
+  template:
+    metadata:
+      name: ds-pod
+      labels:
+        type: app
+    spec:
+      nodeSelector:
+        os: ubuntu
+      containers:
+        - name: container
+          image: hyun6ik/hello
+          ports:
+            - containerPort: 8000
