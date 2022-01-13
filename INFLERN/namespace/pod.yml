@@ -10,4 +10,4 @@ spec:
     - name: container
       image: hyun6ik/hello
       ports:
-        - containerPort: 8080
+        - containerPort: 8000
