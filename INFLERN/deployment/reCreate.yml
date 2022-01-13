@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: app
+  strategy:
+    type: Recreate
+  revisionHistoryLimit: 1
+  template:
+    metadata:
+      name: dp-pod
+      labels:
+        type: app
+    spec:
+      containers:
+        - name: container
+          image: hyun6ik/hello
+      terminationGracePeriodSeconds: 10
