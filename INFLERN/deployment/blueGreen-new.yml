@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: blue-green-new
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      ver: v2
+  template:
+    metadata:
+      name: bgn-pod
+      labels:
+        ver: v2
+    spec:
+      containers:
+        - name: container
+          image: tmkube/app:v2
+      terminationGracePeriodSeconds: 0
