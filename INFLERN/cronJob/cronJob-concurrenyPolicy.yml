@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cron-job-2
+spec:
+  schedule: "19,20,21 * * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: container
+              image: tmkube/init
+              command: [ "sh", "-c", "echo 'job start'; sleep 140; echo 'job end'" ]
+          terminationGracePeriodSeconds: 0
