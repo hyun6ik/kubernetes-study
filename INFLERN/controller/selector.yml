@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: web
+      ver: v1
+    matchExpressions:
+      - {key: type, operator: In, values: [web]}
+      - {key: ver, operator: Exists}
+  template:
+    metadata:
+      name: rs-pod
+      labels:
+        type: web
+        ver: v1
+    spec:
+      containers:
+        - name: container
+          image: nginx:1.14
+      terminationGracePeriodSeconds: 0

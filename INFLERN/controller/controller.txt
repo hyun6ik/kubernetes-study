@@ -1,0 +1,2 @@
+Controller를 지울 때 Pod를 남겨주고 싶다면?
+--> --orphan=orphan

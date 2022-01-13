@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      name: rs-pod
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: container
+          image: hyun6ik/hello
+          ports:
+            - containerPort: 8000
+      terminationGracePeriodSeconds: 0  # Pod를 삭제시키면 기본적으로 30초 뒤에 삭제되도록 설정되어 있는데
+                                        # 이 옵션을 사용하면 바로 삭제됨
