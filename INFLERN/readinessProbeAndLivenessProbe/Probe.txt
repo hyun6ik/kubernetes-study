@@ -1,0 +1,11 @@
+#  while true; do date && curl 10.99.216.99:8080/hostname; sleep 1; done
+
+# kubectl get events -w | grep pod이름
+
+# kubectl describe pod pod이름 | grep -A5 Conditions
+
+# kubectl describe endpoint 서비스이름
+
+#  while true; do date && curl 10.99.216.99:8080/health; sleep 1; done
+
+# watch "kubectl describe pod pod이름 | grep -A10 Events"
