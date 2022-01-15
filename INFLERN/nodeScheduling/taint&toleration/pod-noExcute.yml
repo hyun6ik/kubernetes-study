@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-no-execute
+spec:
+  tolerations:
+    - effect: NoExecute
+      key: out-of-disk
+      operator: Exists
+      tolerationSeconds: 15
+  containers:
+    - name: container
+      image: hyun6ik/hello
+  terminationGracePeriodSeconds: 0
