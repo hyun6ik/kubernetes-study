@@ -1,7 +1,11 @@
+// 노드에 라벨달기
 # kubectl label nodes k8s-node1 gpu=no1
 
+// 노드에 라벨 해제하기
 # kubectl taint nodes k8s-node1 hw=gpu:NoSchedule
 
+// 노드에 Taint 설정하기
 # kubectl taint nodes k8s-node1 hw=gpu:NoSchedule-
 
+// 노드에 Taint 해제하기
 # kubectl taint nodes k8s-node2 out-of-disk=True:NoExecute
