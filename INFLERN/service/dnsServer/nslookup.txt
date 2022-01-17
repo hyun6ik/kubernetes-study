@@ -1,0 +1,2 @@
+# nslookup 서비스이름
+# nslookup 서비스의 DNS 네임
