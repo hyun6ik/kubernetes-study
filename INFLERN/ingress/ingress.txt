@@ -1,2 +1,6 @@
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.0/deploy/static/provider/baremetal/deploy.yaml
 
+# Centos HostName 등록
+cat << EOF >> /etc/hosts
+10.100.0.105 www.app.com
+EOF
