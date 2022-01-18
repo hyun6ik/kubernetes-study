@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: container
-      image: kutetm/app:v2
+      image: kubetm/app:v2
 ---
 
 apiVersion: v1
