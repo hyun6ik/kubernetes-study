@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: stateful-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: db
+  serviceName: "stateful-service"
+  template:
+    metadata:
+      labels:
+        type: db
+    spec:
+      containers:
+        - name: container
+          image: kubetm/app
+      terminationGracePeriodSeconds: 10
