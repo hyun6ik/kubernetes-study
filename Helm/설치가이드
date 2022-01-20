@@ -1,0 +1,14 @@
+
+## 3.7.2 버전 설치
+curl -O https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz
+tar -zxvf helm-v3.7.2-linux-amd64.tar.gz
+mv linux-amd64/helm /usr/local/bin/helm
+
+## 키워드 자동 완성 기능
+source <(helm completion bash)
+
+## 키워드 껐다 켜도 자동완성 될 수 있게끔
+helm completion bash > /etc/bash_completion.d/helm
+
+## 쿠버네티스 config 파일 확인
+cd ~/.kube/
