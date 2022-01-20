@@ -1,0 +1,31 @@
+//Pause Container 확인
+# docker ps | grep Pod 이름
+
+// Pause Container 인터페이스 확인
+
+docker ps | grep Pod 이름
+docker inspect <container-id> -f "{{json .NetworkSettings}}"
+sudo ln -s /var/run/docker/netns /var/run/netns
+ip netns exec <SandboxKey> ip a
+
+// Calico 설치
+curl https://docs.projectcalico.org/manifests/calico.yaml -O --insecure
+
+// Calico Interface 확인
+1. route 명령 설치
+yum -y install net-tools
+2. route으로 Pod IP와 연결 되어 있는 인터페이스 확인
+route | grep cal
+3. route로 확인된 가상인터페이스 ID가 호스트 네트워크에 있는지 확인
+ip addr
+
+
+// Pause Container Network Namespaces 확인
+docker inspect <container-id> -f "{{json .HostConfig.NetworkMode}}"
+
+// Docker Container NetworkMode
+NetworkMode - Sets the networking mode for the container.
+Supported standard values are: bridge, host, none, and container:<name|id>.
+Any other value is taken as a custom network’s name to which this container should connect to.
+
+
