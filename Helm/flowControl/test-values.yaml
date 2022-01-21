@@ -1,0 +1,22 @@
+func:
+  enabled: true
+
+pipe:
+  log: info
+
+dev:
+  env: dev
+  log: info
+
+qa:
+  env: qa
+  log: info
+
+prod:
+  env: prod
+  log:
+
+data:
+  - a
+  - b
+  - c
