@@ -1,1 +1,27 @@
 helm create mychart
+
+
+// Helm이 알아서 Install or Upgrade 판단하는 명령어 (namespace도..)
+helm upgrade mychart . -n nm-1 --create-namespace --install
+
+// Pod가 Running 상태일 때 Return message를 받고 싶다면??
+helm upgrade mychart . -n nm-1 --create-namespace --wait --install
+
+// Pod 자동 재기동 Tip
+1. ConfigMap 변경이 있을 때 Pod 재기동 하는 방법
+deployment.yaml 파일에
+ annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+2. ConfigMap에 상관없이 무조건 Pod를 재배포 하는 방법
+(Image Tag를 lastest로 사용시 Template 변경이 없더라도 재기동 시킬 때)
+ annotations:
+  rollme: {{ randAlphaNum 5 | quote }}
+
+// Helm에서 PV와 Namespace에 대한 동작
+pv.yaml에서 hostPath를 변경했다면 PV는 Bound 상태시 수정이 불가하므로
+Unintsall 후에 다시 Install이 필요하다.
+
+// Helm 저장소
+배포나 Upgrade에 대한 정보는 모두 해당 Namespace의 Secret에 저장이 된다.
+그래서 배포나 Upgrade를 할 때 마다 Secret이 하나씩 추가가 된다.
+Helm History로 확인해 볼 수 있다.
