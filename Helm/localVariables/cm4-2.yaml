@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: variables-range
+data:
+  index:
+    {{- range $index, $value := .Values.data }}
+      {{ $index }} : {{ $value }}
+    {{- end }}
+
+  key-value:
+    {{- range $key, $value := .Values.dev }}
+      {{ $key }} : {{ $value | quote }}
+    {{- end }}
