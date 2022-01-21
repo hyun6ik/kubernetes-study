@@ -5,7 +5,7 @@ helm create mychart
 helm upgrade mychart . -n nm-1 --create-namespace --install
 
 // Pod가 Running 상태일 때 Return message를 받고 싶다면??
-helm upgrade mychart . -n nm-1 --create-namespace --wait --install
+helm upgrade mychart . -n nm-1 --create-namespace --install --wait
 
 // Pod 자동 재기동 Tip
 1. ConfigMap 변경이 있을 때 Pod 재기동 하는 방법
